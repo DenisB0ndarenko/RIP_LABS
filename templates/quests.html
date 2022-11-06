@@ -1,0 +1,17 @@
+{% extends 'quests_base.html' %}
+
+{% block title %}MyQuestHub Quests{% endblock %}
+
+{% block content %}
+<ul>
+    {% for each_one in data.quests %}
+        <li><a href="{% url 'q_url' each_one.id_quest %}">{{ each_one.quest_name }}</a> </li>
+        <img src="{{ each_one.preview_pic }}" height="150">
+        <p>Жанр: {{ each_one.genre.genre_name }}</p>
+        <p>Адрес: {{ each_one.address }}</p>
+        <p>Количество участников: {{ each_one.capacity }}</p>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'quests_base.html' %}
+
+{% block title %}Квест №{{ data.quest.id_quest }}{% endblock %}
+
+{% block content %}
+    <div style="color: black; font-size: larger; font-weight: bold">Информация о квесте №{{ data.quest.id_quest }}: {{ data.quest.quest_name }}</div>
+        <p></p>
+        <img src="{{ data.quest.preview_pic }}" height="150">
+        <p>Жанр: {{ data.quest.genre.genre_name }}</p>
+        <p>Организатор: {{ data.quest.organizer.organizer_name }}</p>
+        <p>Адрес: {{ data.quest.address }}</p>
+        <p>Количество участников: {{ data.quest.capacity }}</p>
+        <p>Цена: {{ data.quest.price }}</p>
+        <p style="color: yellow; font-size: larger;">Описание: {{ data.quest.description }}</p>
+{% endblock %}
