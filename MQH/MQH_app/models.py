@@ -14,7 +14,7 @@ class Status(models.Model):
     status_name = models.CharField(unique=True, max_length=50)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'Status'
 
 
@@ -30,7 +30,7 @@ class Booking(models.Model):
 
     class Meta:
         unique_together = (('quest', 'booking_date'),)
-        managed = False
+        # managed = False
         db_table = 'booking'
 
 
@@ -39,7 +39,7 @@ class Genre(models.Model):
     genre_name = models.CharField(unique=True, max_length=50)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'genre'
 
 
@@ -48,7 +48,7 @@ class Organizer(models.Model):
     organizer_name = models.CharField(unique=True, max_length=50)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'organizer'
 
 
@@ -64,5 +64,5 @@ class Quest(models.Model):
     price = models.IntegerField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'quest'

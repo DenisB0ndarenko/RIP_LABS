@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'MQH_app.apps.MqhAppConfig',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'drf_spectacular'
 ]
 
 REST_FRAMEWORK = {
@@ -52,11 +53,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DATETIME_FORMAT': "%Y-%m-%d",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', # For react front end
-    'http://localhost:8000', # For Django
+    'http://localhost:3000',
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -101,9 +102,9 @@ WSGI_APPLICATION = 'MQH.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'MQH_db',
+        'NAME': 'mqh_db',
         'USER': 'dbuser',
-        'PASSWORD': '1357924680d',
+        'PASSWORD': '123123123',
         'HOST': 'localhost',
         'PORT': '5432'
     }

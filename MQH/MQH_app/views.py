@@ -25,7 +25,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly, IsManagerOrReadOnly, IsManager
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly
+from .permissions import IsManagerOrReadOnly, IsManager
 from rest_framework.response import Response
 from rest_framework.request import Request
 

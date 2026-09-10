@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 router = routers.DefaultRouter()
 router.register(r'quests', quest_hub_views.QuestViewSet, basename='quests')
@@ -26,6 +27,10 @@ urlpatterns = [
     path(r'questPricing/', quest_hub_views.get_quest_pricing),
     path('api/token/obtain', TokenObtainPairView.as_view(), name='token_obtain'),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
     path('admin/', admin.site.urls),
 ]
